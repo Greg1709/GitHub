@@ -21,7 +21,8 @@ namespace ERP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.MaximumSize = new Size(473, 164);
+            this.MaximizeBox = false;
         }
     }
 }
