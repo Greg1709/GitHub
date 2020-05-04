@@ -23,6 +23,18 @@ namespace ERP
         {
             this.MaximumSize = new Size(473, 164);
             this.MaximizeBox = false;
+            this.ControlBox = false;
+        }
+
+
+        private void closure()
+        {
+            this.Close();
+        }
+
+        private void end_Click(object sender, EventArgs e)
+        {
+            closure();
         }
     }
 }

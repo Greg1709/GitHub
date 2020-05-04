@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.end = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -83,11 +85,22 @@
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Nom de la société";
             // 
+            // end
+            // 
+            this.end.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("end.BackgroundImage")));
+            this.end.Location = new System.Drawing.Point(521, 128);
+            this.end.Name = "end";
+            this.end.Size = new System.Drawing.Size(62, 65);
+            this.end.TabIndex = 3;
+            this.end.UseSelectable = true;
+            this.end.Click += new System.EventHandler(this.end_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 205);
+            this.Controls.Add(this.end);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroButton1);
@@ -104,6 +117,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton end;
     }
 }
 
