@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.login = new MetroFramework.Controls.MetroButton();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.end = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // metroButton1
+            // login
             // 
-            this.metroButton1.Location = new System.Drawing.Point(187, 110);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(220, 72);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "Accéder au login employé";
-            this.metroButton1.UseSelectable = true;
+            this.login.Location = new System.Drawing.Point(187, 110);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(220, 72);
+            this.login.TabIndex = 0;
+            this.login.Text = "Accéder au login employé";
+            this.login.UseSelectable = true;
             // 
             // metroTextBox1
             // 
@@ -59,7 +59,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[] {
-        "metroTextBox1"};
+        "Nom de la société "};
             this.metroTextBox1.Location = new System.Drawing.Point(187, 63);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
@@ -71,7 +71,7 @@
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(396, 23);
             this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.Text = "metroTextBox1";
+            this.metroTextBox1.Text = "Nom de la société ";
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -103,7 +103,7 @@
             this.Controls.Add(this.end);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.login);
             this.Name = "Form1";
             this.Text = "Entreprise";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -114,7 +114,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton login;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton end;
