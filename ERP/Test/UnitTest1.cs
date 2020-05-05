@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -7,12 +8,20 @@ namespace Test
         [SetUp]
         public void Setup()
         {
+            Tests test = new Tests();
+            test.RecupDonnee();
         }
 
         [Test]
-        public void Test1()
+        public  void RecupDonnee()
         {
-            Assert.Pass();
+            List<string>[] result;
+            dBconnectTest bdd = new dBconnectTest();
+            bdd.CloseConnection();
+            Assert.IsTrue(bdd.CloseConnection());
+            result = bdd.Select();
+            Assert.AreEqual("Google", result[1][0]);
+            
         }
     }
 }
