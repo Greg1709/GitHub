@@ -144,9 +144,22 @@ namespace Test
 
             }
         }
-        public void insert()
+        public void insert(string table,string[] nomLigne,string[] values)
         {
+            string query = "INSERT INTO " + table + "(" + string.Join(",", nomLigne) + ") VALUES ('" + string.Join("','", values) + "')";
 
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+            else
+            {
+               
+            }
         }
     }
 }

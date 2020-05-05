@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
+using Renci.SshNet.Messages;
+
 namespace ERP.Model
 {
     class dBConnect
@@ -71,14 +75,32 @@ namespace ERP.Model
                 return false;
             }
         }
-
-        public List<string>[] Select()
+        public void insert(string table, string[] nomLigne, string[] values)
         {
-            string query = "SELECT Soc_id,Soc_nom,Soc_mail FROM T_Societe WHERE Soc_nom='Google'";
-            List<string>[] info = new List<string>[3];
-            info[0] = new List<string>();
-            info[1] = new List<string>();
-            info[2] = new List<string>();
+            string query = "INSERT INTO " + table + "(" + string.Join(",", nomLigne) + ") VALUES ('" + string.Join("','", values) + "')";
+            Console.WriteLine(query);
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+            else
+            {
+
+            }
+        }
+        public List<string>[] Select(string attributes,string table,string condition,string[] lignes)
+        {
+            string query = "SELECT "+attributes+" FROM "+table+" WHERE " +condition;
+            List<string>[] info = new List<string>[lignes.Length];
+            //info[0] = new List<string>();
+            for(int i=0; i<lignes.Length; i++)
+            {
+                info[i] = new List<string>();
+            }
 
             if (this.OpenConnection() == true)
             {
@@ -86,11 +108,11 @@ namespace ERP.Model
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    info[0].Add(dataReader["Soc_id"] + "");
-                    info[1].Add(dataReader["Soc_nom"] + "");
-                    info[2].Add(dataReader["Soc_mail"] + "");
-
-
+                    for (int i = 0; i < lignes.Length; i++)
+                    {
+                        info[i].Add(dataReader[lignes[i]] + "");
+                    }
+                   // info[0].Add(dataReader["Soc_id"] + "");
                 }
 
                 dataReader.Close();
