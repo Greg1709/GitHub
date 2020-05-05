@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using Test.model;
+using Test.view;
 
 namespace Test.controler
 {
     class SocieteControlerTest
     {
         private SocieteTest googleModel;
+        private SocieteViewTest googleView = new SocieteViewTest();
         [SetUp]
         public void SetUp()
         {
@@ -38,6 +40,17 @@ namespace Test.controler
         public int getPhoneNumber()
         {
             return googleModel.getPhone();
+        }
+        public string getMail()
+        {
+            return googleModel.getMail();
+        }
+        public void connexion()
+        {
+            if(googleModel.state == true)
+            {
+                googleView.Connect();
+            }
         }
     }
 }

@@ -30,5 +30,15 @@ namespace Test.view
         {
             Assert.AreEqual(70, googleControler.getPhoneNumber());
         }
+        [Test]
+        public void afficherMail()
+        {
+            Assert.AreEqual("hello@boys", googleControler.getMail());
+        }
+        [Test]
+        public void Connect()
+        {
+            Assert.Pass();
+        }
     }
 }

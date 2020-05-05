@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ERP.Controler;
 using ERP.Model;
 using MetroFramework;
 using MetroFramework.Forms;
@@ -16,12 +17,11 @@ namespace ERP
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        private string[] test;
-        private string result;
+       private SocieteController controllerSociete;
         public Form1()
         {
             InitializeComponent();
-            Societe google = new Societe("Google");
+            
 
         }
 
@@ -42,6 +42,23 @@ namespace ERP
         private void end_Click(object sender, EventArgs e)
         {
             closure();
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            if (SocieteName.Text != "")
+            {
+                controllerSociete = new SocieteController(SocieteName.Text);
+                controllerSociete.connexion();
+
+            }
+        }
+        public void connect()
+        {
+            LoginEmpView empLog = new LoginEmpView();
+            this.Close();
+            Console.WriteLine("ça fonctionne");
+            empLog.Show();
         }
     }
 }
