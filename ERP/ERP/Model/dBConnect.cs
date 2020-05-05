@@ -92,7 +92,7 @@ namespace ERP.Model
                 MessageBox.Show("Cette donnée n'a pas pu être inséré");
             }
         }
-        public List<string>[] Select(string attributes,string table,string condition,string[] lignes)
+        public List<string>[] Select(string attributes,string table,string[] lignes, string condition)
         {
             string query = "SELECT "+attributes+" FROM "+table+" WHERE " +condition;
             List<string>[] info = new List<string>[lignes.Length];

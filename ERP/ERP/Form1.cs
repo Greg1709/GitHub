@@ -21,14 +21,7 @@ namespace ERP
         public Form1()
         {
             InitializeComponent();
-            test = new string[]{"Hello ","World!","My","Name" };
-            Console.WriteLine("'"+string.Join("','",test)+"'");
-            // Console.WriteLine(string.Join(",",test(c'est le tableau)));
-            string[] tableau, lignes;
-            tableau = new string[] { "Soc_nom", "Soc_num_ad", "Soc_rue_ad", "Soc_ville_ad", "Soc_main_oeuvre", "Soc_Phone", "Soc_mail" };
-            lignes = new string[] { "Facebook", "14", "rue august", "Paris", "1405", "12654", "@kjhe" };
-            dBConnect bdd = new dBConnect();
-            bdd.insert("T_societe", tableau, lignes);
+            Societe google = new Societe("Google");
 
         }
 
