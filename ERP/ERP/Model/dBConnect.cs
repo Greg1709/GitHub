@@ -48,11 +48,11 @@ namespace ERP.Model
                 switch (ex.Number)
                 {
                     case 0:
-                        Console.WriteLine("Connexion impossible");
+                        MessageBox.Show("Connexion impossible");
 
                         break;
                     case 1045:
-                        Console.WriteLine("Mauvais identifiant");
+                        MessageBox.Show("Mauvais identifiant");
 
                         break;
                 }
@@ -78,7 +78,7 @@ namespace ERP.Model
         public void insert(string table, string[] nomLigne, string[] values)
         {
             string query = "INSERT INTO " + table + "(" + string.Join(",", nomLigne) + ") VALUES ('" + string.Join("','", values) + "')";
-            Console.WriteLine(query);
+            
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand();
@@ -89,7 +89,7 @@ namespace ERP.Model
             }
             else
             {
-
+                MessageBox.Show("Cette donnée n'a pas pu être inséré");
             }
         }
         public List<string>[] Select(string attributes,string table,string condition,string[] lignes)
@@ -141,7 +141,7 @@ namespace ERP.Model
             }
             else
             {
-
+                MessageBox.Show("Cette donnée n'a pas pu être supprimé");
             }
         }
         public void delete(string table, string condition)
@@ -157,7 +157,7 @@ namespace ERP.Model
             }
             else
             {
-
+                MessageBox.Show("Cette donnée n'a pas pu être supprimé");
             }
         }
     }

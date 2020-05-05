@@ -16,15 +16,15 @@ namespace Test
         [Test]
         public  void RecupDonnee()
         {
-            string[] tableau,lignes;
-            tableau = new string[] {"Soc_nom","Soc_num_ad","Soc_rue_ad","Soc_ville_ad","Soc_main_oeuvre","Soc_Phone","Soc_mail" };
-            lignes = new string[] { "Facebook", "14", "rue august", "Paris","1405","12654","@kjhe" };
+            string[] tableau;
+            tableau = new string[] {"Soc_nom","Soc_Phone","Soc_mail" };
+            
             List<string>[] result;
             dBconnectTest bdd = new dBconnectTest();
-            bdd.delete("T_societe","  Soc_id = 5");
+
             //bdd.insert("T_societe", tableau,lignes);
-            result = bdd.Select();
-            Assert.AreEqual("Google", result[1][0]);
+            result = bdd.Select(string.Join(", ", tableau), "T_societe", tableau, "Soc_id = 2");
+            Assert.AreEqual("Google", result[0][0]);
             
         }
     }

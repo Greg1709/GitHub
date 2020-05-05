@@ -77,41 +77,78 @@ namespace Test
                 return false;
             }
         }
-        
-        public List<string>[] Select()
+
+        public List<string>[] Select(string attributes, string table, string[] lignes, string condition)
         {
-            string query = "SELECT Soc_id,Soc_nom,Soc_mail FROM T_Societe WHERE Soc_nom='Google'";
-            List<string>[] info = new List<string>[3];
-            info[0] = new List<string>();
-            info[1] = new List<string>();
-            info[2] = new List<string>();
-            
+            string query = "SELECT " + attributes + " FROM " + table + " WHERE " + condition;
+            List<string>[] info = new List<string>[lignes.Length];
+            //info[0] = new List<string>();
+            for (int i = 0; i < lignes.Length; i++)
+            {
+                info[i] = new List<string>();
+            }
+
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    info[0].Add(dataReader["Soc_id"] + "");
-                    info[1].Add(dataReader["Soc_nom"] + "");
-                    info[2].Add(dataReader["Soc_mail"] + "");
-
-
+                    for (int i = 0; i < lignes.Length; i++)
+                    {
+                        info[i].Add(dataReader[lignes[i]] + "");
+                    }
+                    // info[0].Add(dataReader["Soc_id"] + "");
                 }
 
                 dataReader.Close();
                 this.CloseConnection();
-                
+
                 return info;
-                
+
             }
             else
             {
-                
+
                 return info;
             }
         }
-        
+        public List<string>[] Select(string attributes, string table, string[] lignes)
+        {
+            string query = "SELECT " + attributes + " FROM " + table;
+            List<string>[] info = new List<string>[lignes.Length];
+            //info[0] = new List<string>();
+            for (int i = 0; i < lignes.Length; i++)
+            {
+                info[i] = new List<string>();
+            }
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    for (int i = 0; i < lignes.Length; i++)
+                    {
+                        info[i].Add(dataReader[lignes[i]] + "");
+                    }
+                    // info[0].Add(dataReader["Soc_id"] + "");
+                }
+
+                dataReader.Close();
+                this.CloseConnection();
+
+                return info;
+
+            }
+            else
+            {
+
+                return info;
+            }
+        }
+
         public void update(string nomTable, string colonne, string value, string condition)
         {
             string query = "UPDATE " + nomTable + " SET " + colonne + " = '"+value +"' WHERE " + condition;
