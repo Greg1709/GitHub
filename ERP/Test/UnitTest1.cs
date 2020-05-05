@@ -17,8 +17,6 @@ namespace Test
         {
             List<string>[] result;
             dBconnectTest bdd = new dBconnectTest();
-            bdd.CloseConnection();
-            Assert.IsTrue(bdd.CloseConnection());
             result = bdd.Select();
             Assert.AreEqual("Google", result[1][0]);
             
