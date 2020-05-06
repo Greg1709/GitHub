@@ -41,5 +41,26 @@ namespace Test.view
             ControlerTest.connexion("Gregory", "test");
             Assert.AreEqual("Administrateur", ControlerTest.getRole());
         }
+        [Test]
+        public void trouverPrenom()
+        {
+            string name;
+            name = ControlerTest.findFirstName(1);
+            Assert.AreEqual("Gregory", name);
+        }
+        [Test]
+        public void trouverNom()
+        {
+            string name;
+            name = ControlerTest.findName(1);
+            Assert.AreEqual("Deneuve", name);
+        }
+        [Test]
+        public void trouverRole()
+        {
+            string role;
+            role = ControlerTest.findRole(1);
+            Assert.AreEqual("Administrateur", role);
+        }
     }
 }

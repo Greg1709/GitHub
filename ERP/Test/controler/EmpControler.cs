@@ -45,6 +45,21 @@ namespace Test.controler
         {
             return modelTest.getRole();
         }
+        public string findFirstName(int Id)
+        {
+            string name = modelTest.findFirstName(Id);
+            return name;
+        }
+        public string findName(int Id)
+        {
+            string name = modelTest.findName(Id);
+            return name;
+        }
+        public string findRole(int Id)
+        {
+            string Role = modelTest.findRole(Id);
+            return Role;
+        }
     }
 
 }

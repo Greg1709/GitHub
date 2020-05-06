@@ -21,11 +21,10 @@ namespace Test.model
         {
             return this.id_societe;
         }
-       [Test]
+       
         public void connection(string prenom, string pass)
         {
             string cryptPass = encryptPass(pass);
-            Assert.AreEqual("A9-4A-8F-E5-CC-B1-9B-A6-1C-4C-08-73-D3-91-E9-87-98-2F-BB-D3",encryptPass("test"));
             List<string>[] result;
             string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
             result = bdd.Select(string.Join(", ", attributes), "T_Employe", "T_societe", attributes, "T_Employe.Soc_id = T_Societe.Soc_id", " T_Employe.Emp_prenom='" + prenom + "' AND T_Employe.Soc_id=" + this.get_id_soc() + " AND T_Employe.Emp_pass='" + cryptPass + "'");
@@ -69,6 +68,30 @@ namespace Test.model
         public string getRole()
         {
             return this.role;
+        }
+        public string findFirstName(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
+
+            result =bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id+"");
+            return result[3][0];
+        }
+        public string findName(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[2][0];
+        }
+        public string findRole(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[1][0];
         }
     }
 }
