@@ -18,19 +18,26 @@ namespace ERP
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
        private SocieteController controllerSociete;
+        private int id_Soc;
+        LoginEmpView empLog;
+
+
         public Form1()
         {
             InitializeComponent();
             
 
-        }
+    }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.MaximumSize = new Size(473, 164);
             this.MaximizeBox = false;
             this.ControlBox = false;
-           
+            /*List<string>[] vs;
+            vs = bobControler.getConnect();
+            MessageBox.Show(vs[2][0]);*/
+
         }
 
 
@@ -49,13 +56,19 @@ namespace ERP
             if (SocieteName.Text != "")
             {
                 controllerSociete = new SocieteController(SocieteName.Text);
+                this.id_Soc = controllerSociete.getId();
+                
                 controllerSociete.connexion();
+               
 
             }
         }
-        public void connect()
+        public void connect(int id_soc)
         {
-            LoginEmpView empLog = new LoginEmpView();
+            Console.WriteLine(id_soc);
+             empLog = new LoginEmpView(id_soc);
+           
+            
             this.Close();
             Console.WriteLine("ça fonctionne");
             empLog.Show();

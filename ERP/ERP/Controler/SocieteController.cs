@@ -20,7 +20,12 @@ namespace ERP.Controler
         {
             return societe.getName();
         }
+        public int getId()
+        {
+            Console.WriteLine(societe.getId());
+            return societe.getId();
 
+        }
         public int getPrix()
         {
             return societe.getPrix();
@@ -42,7 +47,7 @@ namespace ERP.Controler
             if(societe.state == true)
             {
                 MessageBox.Show("La société existe connectez-vous", "Ok");
-                f1.connect();
+                f1.connect(societe.getId());
             }
         }
     }

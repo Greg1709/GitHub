@@ -108,6 +108,7 @@
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Connexion";
             this.loginBtn.UseSelectable = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // LoginEmpView
             // 
