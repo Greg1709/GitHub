@@ -69,7 +69,51 @@ namespace ERP.Model
         {
             return this.nom;
         }
+        public string getPass()
+        {
+            return this.pass;
+        }
+        public string getPrenom()
+        {
+            return this.prenom;
+        }
+        public string findFirstName(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
 
-        
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[3][0];
+        }
+        public string findName(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[2][0];
+        }
+        public string getFirstName()
+        {
+            return this.prenom;
+        }
+        public string findRole(int Id)
+        {
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[1][0];
+        }
+        public void changePass(string newPass, int id)
+        {
+            string pass = encryptPass(newPass);
+            bdd.update("T_employe", "Emp_pass", newPass, "Emp_id =" + id);
+        }
+        public void changeName(string name, int id)
+        {
+            bdd.update("T_employe", "Emp_nom", name, "Emp_id =" + id);
+        }
+
     }
 }

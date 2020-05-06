@@ -49,8 +49,44 @@ namespace ERP.Controler
         {
             return model.getId();
         }
-      
+        public string getPrenom()
+        {
+            return model.getPrenom();
+        }
+        public string getFirstName()
+        {
+            return model.getFirstName();
+        }
         
+        public string findFirstName(int Id)
+        {
+            string name = model.findFirstName(Id);
+            return name;
+        }
+        public string findName(int Id)
+        {
+            string name = model.findName(Id);
+            return name;
+        }
+        public string findRole(int Id)
+        {
+            string Role = model.findRole(Id);
+            return Role;
+        }
+        public string getPass()
+        {
+            return model.getPass();
+        }
+        public void changePass(string newPass, int id)
+        {
+            model.changePass(newPass, id);
+        }
+        public void changeName(string name, int id)
+        {
+            model.changeName(name, id);
+        }
+
+
     }
 }
 
