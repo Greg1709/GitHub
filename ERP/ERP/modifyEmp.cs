@@ -46,19 +46,31 @@ namespace ERP
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if(nameModify.Text != controler.findName(this.id_emp))
+           
+            if (SelectName.Checked == true)
             {
-                if(passModify.Text != controler.findPass(this.id_emp))
+                if (nameModify.Text != controler.findName(this.id_emp))
                 {
-                    if(passModify.Text != "")
-                    {
-                        controler.changePass(passModify.Text, this.id_emp);
-                    }
-                    if(nameModify.Text != "")
+                    if (nameModify.Text != "")
                     {
                         controler.changeName(nameModify.Text, this.id_emp);
+                        MessageBox.Show("Nom mis à jour");
                     }
                 }
+            }
+            else if (SelectPass.Checked == true)
+            {
+                if (passModify.Text != controler.findPass(this.id_emp))
+                {
+                    if (passModify.Text != "")
+                    {
+                        controler.changePass(passModify.Text, this.id_emp);
+                        MessageBox.Show("Mot de passe mis à jour");
+                    }
+                }
+            }else if(SelectName.Checked == false && SelectPass.Checked == false)
+            {
+                MessageBox.Show("Vous n'avez pas choisis quel élément vous vouliez mettre à jour");
             }
             else
             {

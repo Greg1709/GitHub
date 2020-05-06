@@ -37,7 +37,12 @@ namespace ERP
 
         private void infoSoc_Click(object sender, EventArgs e)
         {
-            view2 = new modifyEmp(this.id_societe,this.id_employe);
+            
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            view2 = new modifyEmp(this.id_societe, this.id_employe);
             view2.Show();
             this.Close();
         }

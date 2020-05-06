@@ -35,6 +35,8 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.SelectName = new System.Windows.Forms.CheckBox();
+            this.SelectPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // nameModify
@@ -102,7 +104,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 120);
+            this.metroLabel1.Location = new System.Drawing.Point(6, 203);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(164, 20);
             this.metroLabel1.TabIndex = 2;
@@ -112,7 +114,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(68, 200);
+            this.metroLabel2.Location = new System.Drawing.Point(6, 123);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(105, 20);
             this.metroLabel2.TabIndex = 3;
@@ -145,11 +147,31 @@
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
+            // SelectName
+            // 
+            this.SelectName.AutoSize = true;
+            this.SelectName.Location = new System.Drawing.Point(537, 126);
+            this.SelectName.Name = "SelectName";
+            this.SelectName.Size = new System.Drawing.Size(18, 17);
+            this.SelectName.TabIndex = 6;
+            this.SelectName.UseVisualStyleBackColor = true;
+            // 
+            // SelectPass
+            // 
+            this.SelectPass.AutoSize = true;
+            this.SelectPass.Location = new System.Drawing.Point(537, 203);
+            this.SelectPass.Name = "SelectPass";
+            this.SelectPass.Size = new System.Drawing.Size(18, 17);
+            this.SelectPass.TabIndex = 7;
+            this.SelectPass.UseVisualStyleBackColor = true;
+            // 
             // modifyEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 392);
+            this.Controls.Add(this.SelectPass);
+            this.Controls.Add(this.SelectName);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel2);
@@ -172,5 +194,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private System.Windows.Forms.CheckBox SelectName;
+        private System.Windows.Forms.CheckBox SelectPass;
     }
 }

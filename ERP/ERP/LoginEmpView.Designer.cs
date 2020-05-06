@@ -88,7 +88,7 @@
             this.passEmploye.Location = new System.Drawing.Point(99, 172);
             this.passEmploye.MaxLength = 32767;
             this.passEmploye.Name = "passEmploye";
-            this.passEmploye.PasswordChar = '\0';
+            this.passEmploye.PasswordChar = '*';
             this.passEmploye.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.passEmploye.SelectedText = "";
             this.passEmploye.SelectionLength = 0;
