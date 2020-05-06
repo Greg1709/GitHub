@@ -16,28 +16,40 @@ namespace ERP
     {
         private EmpControler controler;
         private PanelView panel;
+        private int id;
         public LoginEmpView(int id_soc)
         {
             InitializeComponent();
-            controler = new EmpControler(id_soc);
+            
+            setId(id_soc);
         }
-
+        private void setId(int id_soc)
+        {
+            this.id = id_soc;
+        }
+        
         private void LoginEmpView_Load(object sender, EventArgs e)
         {
             this.MaximumSize = new Size(467, 249);
             this.MaximizeBox = false;
             this.ControlBox = false;
+            controler = new EmpControler(this.id);
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
             if(nomEmploye.Text!="" && passEmploye.Text!="")
             {
+                panel = new PanelView();
                 controler.connexion(nomEmploye.Text, passEmploye.Text);
-                panel = new PanelView(controler.id_soc, controler.getID());
                 this.Close();
                 panel.Show();
             }
+        }
+        public void Connection(int id_soc,int id_emp)
+        {
+            Console.WriteLine("Id de la société " + id_soc);
+            Console.WriteLine("Id de l'employé " + id_emp);
         }
     }
 }

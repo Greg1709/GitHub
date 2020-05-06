@@ -1,4 +1,4 @@
-﻿namespace ERP.Controler
+﻿namespace ERP
 {
     partial class PanelView
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 739);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "PanelView";
             this.Text = "PanelView";
             this.Load += new System.EventHandler(this.PanelView_Load);

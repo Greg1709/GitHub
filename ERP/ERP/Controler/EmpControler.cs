@@ -12,17 +12,29 @@ namespace ERP.Controler
     {
         private EmpModel model;
         private PanelView view;
+        private LoginEmpView view1;
         public int id_soc;
         public EmpControler(int id_soc)
         {
             this.id_soc = id_soc;
             model = new EmpModel(id_soc);
+            view1 = new LoginEmpView(id_soc);
             
+        }
+        public int getIdSoc()
+        {
+            return this.id_soc;
         }
         
         public void connexion(string prenom,string pass)
         {
             model.connection(prenom, pass);
+            if(model.state == true)
+            {
+                Console.WriteLine(model.getId());
+                MessageBox.Show("L'employé existe");
+                view1.Connection(this.getIdSoc(), this.getID());
+            }
         }
 
         public string getRole()
@@ -37,24 +49,7 @@ namespace ERP.Controler
         {
             return model.getId();
         }
-        public void checkRole()
-        {
-            view = new PanelView(this.id_soc, getID());
-            switch (model.getRole())
-            {
-                
-                case "Administrateur":
-                    view.loadTheme(1);
-                    break;
-                case "Comptable":
-                    break;
-                case "Ouvrier":
-                    break;
-                default:
-                   MessageBox.Show("Erreur", "No");
-                    break;
-            }
-        }
+      
         
     }
 }

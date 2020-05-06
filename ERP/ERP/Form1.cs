@@ -19,7 +19,7 @@ namespace ERP
     {
        private SocieteController controllerSociete;
         private int id_Soc;
-        LoginEmpView empLog;
+        private LoginEmpView empLog;
 
 
         public Form1()
@@ -65,7 +65,7 @@ namespace ERP
         }
         public void connect(int id_soc)
         {
-            Console.WriteLine(id_soc);
+            Console.WriteLine("test" + id_soc);
              empLog = new LoginEmpView(id_soc);
            
             
