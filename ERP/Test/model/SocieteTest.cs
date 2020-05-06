@@ -70,5 +70,10 @@ namespace Test.model
                 return false;
             }
         }
+        public void updateOeuvre(int soc_id,int oeuvre)
+        {
+            bdd.update("T_societe", "Soc_main_oeuvre", oeuvre,"Soc_id="+soc_id);
+           // UPDATE t_societe SET Soc_main_oeuvre = 45 WHERE Soc_id = 1
+        }
     }
 }

@@ -200,6 +200,23 @@ namespace Test
                 
             }
         }
+        public void update(string nomTable, string colonne, int value, string condition)
+        {
+            string query = "UPDATE " + nomTable + " SET " + colonne + " = '" + value + "' WHERE " + condition;
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = query;
+                cmd.Connection = connection;
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+                
+            }
+            else
+            {
+
+            }
+        }
         public void delete(string table, string condition)
         {
             string query = "DELETE FROM " + table + " WHERE " + condition;

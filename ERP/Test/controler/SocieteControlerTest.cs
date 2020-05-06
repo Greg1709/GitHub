@@ -52,5 +52,9 @@ namespace Test.controler
                 googleView.Connect();
             }
         }
+        public void updateOeuvre(int soc_id, int oeuvre)
+        {
+            googleModel.updateOeuvre(soc_id, oeuvre);
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Test.view
     class SocieteViewTest
     {
        private SocieteControlerTest googleControler = new SocieteControlerTest("Google");
+       
         [Test]
         public void afficher()
         {
@@ -39,6 +40,12 @@ namespace Test.view
         public void Connect()
         {
             Assert.Pass();
+        }
+        [Test]
+        public void majOeuvre()
+        {
+            googleControler.updateOeuvre(2, 15);
+            Assert.AreEqual(0, googleControler.getPrix());
         }
     }
 }
