@@ -13,7 +13,7 @@ namespace ERP.Model
     {
         private dBConnect bdd = new dBConnect();
         private int id, id_societe;
-        private string nom, prenom, pass;
+        private string nom, prenom, pass,role;
         private bool state;
 
         public EmpModel(int id_societe)
@@ -44,6 +44,10 @@ namespace ERP.Model
             if(result.Count() != 0)
             {
                 MessageBox.Show("Ok good Job");
+                this.id = Int32.Parse(result[0][0]);
+                this.role = result[1][0];
+                this.nom = result[2][0];
+                this.prenom = result[3][0];
                 return true;
             }
             else
@@ -51,5 +55,19 @@ namespace ERP.Model
                 return false;
             }
         }
+        public int getId()
+        {
+            return this.id;
+        }
+        public string getRole()
+        {
+            return this.role;
+        }
+        public string getNom()
+        {
+            return this.nom;
+        }
+
+        
     }
 }

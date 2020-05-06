@@ -106,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controler\EmpControler.cs" />
+    <Compile Include="Controler\PanelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controler\PanelView.Designer.cs">
+      <DependentUpon>PanelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controler\SocieteController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,9 @@
     <Compile Include="Model\Societe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controler\PanelView.resx">
+      <DependentUpon>PanelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

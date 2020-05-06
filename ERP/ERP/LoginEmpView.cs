@@ -15,6 +15,7 @@ namespace ERP
     public partial class LoginEmpView : MetroFramework.Forms.MetroForm
     {
         private EmpControler controler;
+        private PanelView panel;
         public LoginEmpView(int id_soc)
         {
             InitializeComponent();
@@ -33,6 +34,9 @@ namespace ERP
             if(nomEmploye.Text!="" && passEmploye.Text!="")
             {
                 controler.connexion(nomEmploye.Text, passEmploye.Text);
+                panel = new PanelView(controler.id_soc, controler.getID());
+                this.Close();
+                panel.Show();
             }
         }
     }
