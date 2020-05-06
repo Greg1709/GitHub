@@ -122,6 +122,12 @@
     <Compile Include="Model\dBConnect.cs" />
     <Compile Include="Model\EmpModel.cs" />
     <Compile Include="Model\Societe.cs" />
+    <Compile Include="modifyEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modifyEmp.Designer.cs">
+      <DependentUpon>modifyEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginEmpView.resx">
       <DependentUpon>LoginEmpView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modifyEmp.resx">
+      <DependentUpon>modifyEmp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelView.resx">
       <DependentUpon>PanelView.cs</DependentUpon>

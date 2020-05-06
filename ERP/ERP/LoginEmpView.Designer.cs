@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginEmpView));
             this.nomEmploye = new MetroFramework.Controls.MetroTextBox();
             this.passEmploye = new MetroFramework.Controls.MetroTextBox();
             this.loginBtn = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // nomEmploye
@@ -110,11 +112,24 @@
             this.loginBtn.UseSelectable = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.metroButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton1.BackgroundImage")));
+            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton1.Location = new System.Drawing.Point(488, 219);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(74, 65);
+            this.metroButton1.TabIndex = 3;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // LoginEmpView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 308);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passEmploye);
             this.Controls.Add(this.nomEmploye);
@@ -131,5 +146,6 @@
         private MetroFramework.Controls.MetroTextBox nomEmploye;
         private MetroFramework.Controls.MetroTextBox passEmploye;
         private MetroFramework.Controls.MetroButton loginBtn;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

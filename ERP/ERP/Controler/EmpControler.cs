@@ -73,6 +73,11 @@ namespace ERP.Controler
             string Role = model.findRole(Id);
             return Role;
         }
+        public string findPass(int Id)
+        {
+            string Pass = model.findPass(Id);
+            return Pass;
+        }
         public string getPass()
         {
             return model.getPass();
@@ -84,6 +89,18 @@ namespace ERP.Controler
         public void changeName(string name, int id)
         {
             model.changeName(name, id);
+        }
+        public int defineRole(string role)
+        {
+            switch(role)
+            {
+                case "Administrateur":
+                    return 1;
+                    break;
+                default:
+                    return 2;
+                    break;
+            }
         }
 
 

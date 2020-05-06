@@ -105,10 +105,18 @@ namespace ERP.Model
             result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
             return result[1][0];
         }
+        public string findPass(int Id)
+        {
+            string[] attributes = new string[] { "Emp_pass" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
+            return result[0][0];
+        }
         public void changePass(string newPass, int id)
         {
             string pass = encryptPass(newPass);
-            bdd.update("T_employe", "Emp_pass", newPass, "Emp_id =" + id);
+            bdd.update("T_employe", "Emp_pass", pass, "Emp_id =" + id);
         }
         public void changeName(string name, int id)
         {

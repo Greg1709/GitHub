@@ -53,5 +53,13 @@ namespace ERP
             this.Close();
             panel.Show();
         }
+        private void closure()
+        {
+            this.Close();
+        }
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            closure();
+        }
     }
 }
