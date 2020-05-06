@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NUnit.Framework;
+using Org.BouncyCastle.Asn1;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Policy;
@@ -9,17 +11,39 @@ namespace Test.controler
 {
     class EmpControler
     {
-        private EmpModelTest bob;
+        private EmpModelTest modelTest;
         public EmpControler(int id_soc)
         {
-            bob = new EmpModelTest(id_soc);
+            modelTest = new EmpModelTest(2);
         }
         
-        public List<string>[] getConnect()
+       
+        public void connexion(string prenom, string pass)
         {
-            List<string>[] vs;
-            vs = bob.connection("Deneuve", "Gregory","test");
-            return vs;
+            modelTest.connection("Gregory", "test");
+            if(modelTest.state == true)
+            {
+                //Code gestion de la winform
+            }
+        }
+
+       
+        public int getEmpId()
+        {
+            
+            return modelTest.getId();
+        }
+        public string getNom()
+        {
+            return modelTest.getNom();
+        }
+        public string getFirstName()
+        {
+            return modelTest.getFirstName();
+        }
+        public string getRole()
+        {
+            return modelTest.getRole();
         }
     }
 

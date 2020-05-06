@@ -40,16 +40,18 @@ namespace ERP
         {
             if(nomEmploye.Text!="" && passEmploye.Text!="")
             {
-                panel = new PanelView();
+                
                 controler.connexion(nomEmploye.Text, passEmploye.Text);
-                this.Close();
-                panel.Show();
+                
             }
         }
         public void Connection(int id_soc,int id_emp)
         {
             Console.WriteLine("Id de la société " + id_soc);
             Console.WriteLine("Id de l'employé " + id_emp);
+            panel = new PanelView(id_emp, id_soc);
+            this.Close();
+            panel.Show();
         }
     }
 }

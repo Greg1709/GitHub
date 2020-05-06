@@ -46,7 +46,6 @@ namespace ERP.Model
         {
             if(result.Count() != 0)
             {
-                MessageBox.Show("Ok good Job" + result[1][0]);
                 this.id = Int32.Parse(result[0][0]);
                 this.role = result[1][0];
                 this.nom = result[2][0];

@@ -9,18 +9,37 @@ namespace Test.view
 {
     class EmployeViewTest
     {
-        private EmpControler bobControler = new EmpControler(2);
-        [Test]
+        private EmpControler ControlerTest = new EmpControler(2);
+       
+       
         public void test()
         {
-            
+            //ControlerTest.connexion("Gregory", "test");
+            Assert.AreEqual("1", ControlerTest.getEmpId());
         }
         [Test]
-        public void TestRequest()
+        public void afficherIdEmploye()
         {
-            List<string>[] vs;
-            vs = bobControler.getConnect();
-            Assert.IsNotNull(vs[1][1]);
+            ControlerTest.connexion("Gregory", "test");
+            Assert.AreEqual(1, ControlerTest.getEmpId());
+        }
+        [Test]
+        public void afficherNom()
+        {
+            ControlerTest.connexion("Gregory", "test");
+            Assert.AreEqual("Deneuve",ControlerTest.getNom());
+        }
+        [Test]
+        public void afficherPrenom()
+        {
+            ControlerTest.connexion("Gregory", "test");
+            Assert.AreEqual("Gregory", ControlerTest.getFirstName());
+        }
+        [Test]
+        public void afficherRole()
+        {
+            ControlerTest.connexion("Gregory", "test");
+            Assert.AreEqual("Administrateur", ControlerTest.getRole());
         }
     }
 }
