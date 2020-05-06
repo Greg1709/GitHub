@@ -62,5 +62,21 @@ namespace Test.view
             role = ControlerTest.findRole(1);
             Assert.AreEqual("Administrateur", role);
         }
+        [Test]
+        public void testChangePass()
+        {
+            ControlerTest.changePass("HelloWorld", 2);
+            ControlerTest.connexion("Greg", "HelloWorld");
+            Assert.AreEqual("A9-4A-8F-E5-CC-B1-9B-A6-1C-4C-08-73-D3-91-E9-87-98-2F-BB-D3", ControlerTest.getPass());
+            
+        }
+        [Test]
+        public void testChangeName()
+        {
+            string name;
+            name = ControlerTest.findName(2);
+            ControlerTest.changeName("Deneuve", 2);
+            Assert.AreEqual("Deneuve", name);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -26,7 +27,7 @@ namespace Test.model
         {
             string cryptPass = encryptPass(pass);
             List<string>[] result;
-            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom" };
+            string[] attributes = new string[] { "Emp_id", "Emp_role", "Emp_nom", "Emp_prenom","Emp_pass" };
             result = bdd.Select(string.Join(", ", attributes), "T_Employe", "T_societe", attributes, "T_Employe.Soc_id = T_Societe.Soc_id", " T_Employe.Emp_prenom='" + prenom + "' AND T_Employe.Soc_id=" + this.get_id_soc() + " AND T_Employe.Emp_pass='" + cryptPass + "'");
             this.state = getConnexion(result);
         }
@@ -46,6 +47,7 @@ namespace Test.model
                 this.role = result[1][0];
                 this.nom = result[2][0];
                 this.prenom = result[3][0];
+                this.pass = result[4][0];
                 return true;
             }else
             {
@@ -60,6 +62,10 @@ namespace Test.model
         public string getNom()
         {
             return this.nom;
+        }
+        public string getPass()
+        {
+            return this.pass;
         }
         public string getFirstName()
         {
@@ -92,6 +98,15 @@ namespace Test.model
 
             result = bdd.Select(string.Join(", ", attributes), "T_employe", attributes, " Emp_Id= " + Id + "");
             return result[1][0];
+        }
+        public void changePass(string newPass,int id)
+        {
+            string pass = encryptPass(newPass);
+            bdd.update("T_employe", "Emp_pass", newPass, "Emp_id =" + id);
+        }
+        public void changeName(string name, int id)
+        {
+            bdd.update("T_employe", "Emp_nom", name, "Emp_id =" + id);
         }
     }
 }

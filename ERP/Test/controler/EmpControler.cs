@@ -60,6 +60,18 @@ namespace Test.controler
             string Role = modelTest.findRole(Id);
             return Role;
         }
+        public string getPass()
+        {
+            return modelTest.getPass();
+        }
+        public void changePass(string newPass, int id)
+        {
+            modelTest.changePass(newPass, id);
+        }
+        public void changeName(string name, int id)
+        {
+            modelTest.changeName(name,id);
+        }
     }
 
 }
