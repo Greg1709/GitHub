@@ -55,5 +55,37 @@ namespace ERP.Controler
             string mail = societe.findMail(name);
             return mail;
         }
+        public string AfficherPhone(string name)
+        {
+            string phone = societe.findPhone(name);
+            return phone;
+        }
+        public string AfficherPrix(string name)
+        {
+            string prix = societe.findPrice(name);
+            return prix;
+        }
+        public string [] AfficherAdresse(string name)
+        {
+            string[] adresse = new string[3];
+            adresse = societe.findAddress(name);
+            return adresse;
+        }
+        public void changeMail(string mail, int id_soc)
+        {
+            societe.updateMail(mail, id_soc);
+        }
+        public void changePhone(int phone,int id_soc)
+        {
+            societe.updatePhone(phone, id_soc);
+        }
+        public void changePrix(int prix,int id_soc)
+        {
+            societe.updatePrice(prix, id_soc);
+        }
+        public void changeAdresse(string numAd, string rueAd, string villeAd, int id_soc)
+        {
+            societe.updateAddress(numAd, rueAd, villeAd, id_soc);
+        }
     }
 }

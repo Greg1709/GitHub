@@ -166,6 +166,7 @@ namespace ERP.Model
         public void update(string nomTable, string colonne, string value, string condition)
         {
             string query = "UPDATE " + nomTable + " SET " + colonne + " = '" + value + "' WHERE " + condition;
+            Console.WriteLine(query);
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand();

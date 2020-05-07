@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifySoc));
             this.mail = new MetroFramework.Controls.MetroTextBox();
             this.phone = new MetroFramework.Controls.MetroTextBox();
             this.oeuvre = new MetroFramework.Controls.MetroTextBox();
@@ -39,6 +40,7 @@
             this.selectAd = new System.Windows.Forms.CheckBox();
             this.RueAd = new MetroFramework.Controls.MetroTextBox();
             this.VilleAd = new MetroFramework.Controls.MetroTextBox();
+            this.btn_exit = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // mail
@@ -181,6 +183,7 @@
             this.metroButton1.TabIndex = 4;
             this.metroButton1.Text = "Appliquer les modifications";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // selectMail
             // 
@@ -284,11 +287,25 @@
             this.VilleAd.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.VilleAd.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.btn_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_exit.BackgroundImage")));
+            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_exit.Location = new System.Drawing.Point(452, 341);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(66, 66);
+            this.btn_exit.TabIndex = 11;
+            this.btn_exit.UseCustomBackColor = true;
+            this.btn_exit.UseSelectable = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // ModifySoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 430);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.VilleAd);
             this.Controls.Add(this.RueAd);
             this.Controls.Add(this.selectAd);
@@ -322,5 +339,6 @@
         private System.Windows.Forms.CheckBox selectAd;
         private MetroFramework.Controls.MetroTextBox RueAd;
         private MetroFramework.Controls.MetroTextBox VilleAd;
+        private MetroFramework.Controls.MetroButton btn_exit;
     }
 }
