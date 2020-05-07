@@ -90,6 +90,12 @@ namespace ERP.Controler
         {
             model.changeName(name, id);
         }
+        public string findNameSociete(int idsoc)
+        {
+            string nameSociete;
+            nameSociete = model.findNameSociete(idsoc);
+            return nameSociete;
+        }
         public int defineRole(string role)
         {
             switch(role)

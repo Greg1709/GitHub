@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 
 namespace ERP
 {
-    public partial class ModifySoc : Form
+    public partial class ModifySoc : MetroFramework.Forms.MetroForm
     {
-        public ModifySoc()
+        public ModifySoc(int id_societe,string nameSociete)
         {
             InitializeComponent();
+        }
+
+        private void ModifySoc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

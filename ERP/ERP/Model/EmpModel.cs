@@ -122,6 +122,14 @@ namespace ERP.Model
         {
             bdd.update("T_employe", "Emp_nom", name, "Emp_id =" + id);
         }
+        public string findNameSociete(int idsoc)
+        {
+            string[] attributes = new string[] { "Soc_id","Soc_nom" };
+            List<string>[] result;
+
+            result = bdd.Select(string.Join(", ", attributes),"T_societe",attributes,"Soc_id="+idsoc);
+            return result[1][0];
+        }
 
     }
 }

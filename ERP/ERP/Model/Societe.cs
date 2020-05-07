@@ -61,5 +61,12 @@ namespace ERP.Model
                 return false;
             }
         }
+        public string findMail(string name)
+        {
+            string[] attributes = new string[] {"Soc_nom","Soc_mail" };
+            List<string>[] result;
+            result = bdd.Select(string.Join(", ", attributes),"T_societe",attributes, " Soc_nom= "+name+"");
+            return result[1][0];
+        }
     }
 }

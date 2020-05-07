@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace ERP
         public int id_employe, id_societe;
         private EmpControler controler;
         private modifyEmp view2;
+        private ModifySoc view3;
         public PanelView(int id_emp,int id_soc)
         {
             InitializeComponent();
@@ -37,7 +39,10 @@ namespace ERP
 
         private void infoSoc_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show(controler.findNameSociete(this.id_societe));
+            view3 = new ModifySoc(this.id_societe,controler.findNameSociete(this.id_societe));
+            view3.Show();
+            this.Close();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

@@ -50,5 +50,10 @@ namespace ERP.Controler
                 f1.connect(societe.getId());
             }
         }
+        public string AfficherMail(string name)
+        {
+            string mail = societe.findMail(name);
+            return mail;
+        }
     }
 }

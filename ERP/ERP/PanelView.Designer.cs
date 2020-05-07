@@ -36,6 +36,7 @@
             this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.infoSoc = new MetroFramework.Controls.MetroButton();
             this.exit_btn = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -138,11 +139,24 @@
             this.exit_btn.UseSelectable = true;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
+            // metroButton6
+            // 
+            this.metroButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
+            this.metroButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton6.BackgroundImage")));
+            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroButton6.Location = new System.Drawing.Point(23, 659);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(93, 82);
+            this.metroButton6.TabIndex = 7;
+            this.metroButton6.UseCustomBackColor = true;
+            this.metroButton6.UseSelectable = true;
+            // 
             // PanelView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 781);
+            this.Controls.Add(this.metroButton6);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.infoSoc);
             this.Controls.Add(this.metroButton5);
@@ -166,5 +180,6 @@
         private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton infoSoc;
         private MetroFramework.Controls.MetroButton exit_btn;
+        private MetroFramework.Controls.MetroButton metroButton6;
     }
 }
