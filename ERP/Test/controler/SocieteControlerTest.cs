@@ -45,16 +45,43 @@ namespace Test.controler
         {
             return googleModel.getMail();
         }
-        public void connexion()
+        
+        public string AfficherMail(string name)
         {
-            if(googleModel.state == true)
-            {
-                googleView.Connect();
-            }
+            string mail = googleModel.findMail(name);
+            return mail;
         }
-        public void updateOeuvre(int soc_id, int oeuvre)
+        public string AfficherPhone(string name)
         {
-            googleModel.updateOeuvre(soc_id, oeuvre);
+            string phone = googleModel.findPhone(name);
+            return phone;
+        }
+        public string AfficherPrix(string name)
+        {
+            string prix = googleModel.findPrice(name);
+            return prix;
+        }
+        public string[] AfficherAdresse(string name)
+        {
+            string[] adresse = new string[3];
+            adresse = googleModel.findAddress(name);
+            return adresse;
+        }
+        public void changeMail(string mail, int id_soc)
+        {
+            googleModel.updateMail(mail, id_soc);
+        }
+        public void changePhone(int phone, int id_soc)
+        {
+            googleModel.updatePhone(phone, id_soc);
+        }
+        public void changePrix(int prix, int id_soc)
+        {
+            googleModel.updatePrice(prix, id_soc);
+        }
+        public void changeAdresse(string numAd, string rueAd, string villeAd, int id_soc)
+        {
+            googleModel.updateAddress(numAd, rueAd, villeAd, id_soc);
         }
     }
 }

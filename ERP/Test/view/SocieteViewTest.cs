@@ -36,16 +36,12 @@ namespace Test.view
         {
             Assert.AreEqual("hello@boys", googleControler.getMail());
         }
+        
         [Test]
-        public void Connect()
+        public void AfficherPrix()
         {
-            Assert.Pass();
+            Assert.AreEqual("756", googleControler.AfficherPrix("Google"));
         }
-        [Test]
-        public void majOeuvre()
-        {
-            googleControler.updateOeuvre(2, 15);
-            Assert.AreEqual(0, googleControler.getPrix());
-        }
+        
     }
 }
