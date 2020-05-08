@@ -43,5 +43,9 @@ namespace Test.controler
             adresse = model.findAddress(id_client);
             return adresse;
         }
+        public void InscrireClient( string nom,string prenom,int numero,string rue,string ville,string pays,int phone,string mail)
+        {
+            model.signIn(nom,prenom,numero,rue,ville,pays,phone,mail);
+        }
     }
 }

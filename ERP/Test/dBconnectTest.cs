@@ -244,10 +244,6 @@ namespace Test
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
-            else
-            {
-               
-            }
         }
     }
 }

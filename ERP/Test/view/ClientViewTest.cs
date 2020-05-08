@@ -42,10 +42,16 @@ namespace Test.view
         public void AfficherAdresse()
         {
             string[] adresse = controler.afficherAdresse(1);
-            Assert.AreEqual("126", adresse[1]);
-            Assert.AreEqual("rue jean masset", adresse[2]);
-            Assert.AreEqual("paris", adresse[3]);
-            Assert.AreEqual("France", adresse[4]);
+            Assert.AreEqual("126", adresse[0]);
+            Assert.AreEqual("rue jean masset", adresse[1]);
+            Assert.AreEqual("paris", adresse[2]);
+            Assert.AreEqual("France", adresse[3]);
+        }
+        [Test]
+        public void InscrireClient( string nom, string prenom, int numero, string rue, string ville, string pays, int phone, string mail)
+        {
+            controler.InscrireClient("Ross", "hello", 14, "Rue jeannot","Rouen","USA",5466,"@lesboys") ;
+            Assert.AreEqual("@lesboys",controler.afficherMail(2));
         }
     }
 }
