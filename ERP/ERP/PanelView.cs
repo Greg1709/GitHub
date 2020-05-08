@@ -20,6 +20,7 @@ namespace ERP
         private EmpControler controler;
         private modifyEmp view2;
         private ModifySoc view3;
+        private ClientView clientView;
         public PanelView(int id_emp,int id_soc)
         {
             InitializeComponent();
@@ -50,6 +51,13 @@ namespace ERP
             view2 = new modifyEmp(this.id_societe, this.id_employe);
             view2.Show();
             this.Close();
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            clientView = new ClientView(this.id_societe);
+            clientView.Show();
+            this.Hide();
         }
 
         private void PanelView_Load(object sender, EventArgs e)

@@ -105,6 +105,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientView.Designer.cs">
+      <DependentUpon>ClientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controler\ClientControler.cs" />
     <Compile Include="Controler\EmpControler.cs" />
     <Compile Include="Controler\SocieteController.cs" />
     <Compile Include="Form1.cs">
@@ -119,6 +126,7 @@
     <Compile Include="LoginEmpView.Designer.cs">
       <DependentUpon>LoginEmpView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\dBConnect.cs" />
     <Compile Include="Model\EmpModel.cs" />
     <Compile Include="Model\Societe.cs" />
@@ -142,6 +150,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClientView.resx">
+      <DependentUpon>ClientView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
