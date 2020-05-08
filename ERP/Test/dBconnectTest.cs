@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MySql.Data.MySqlClient;
 using NUnit.Framework;
-using MySql.Data.MySqlClient;
-using System.Globalization;
+using System;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -18,9 +16,9 @@ namespace Test
         }
 
 
-        public  dBconnectTest()
+        public dBconnectTest()
         {
-            
+
             Initialize();
         }
 
@@ -36,30 +34,31 @@ namespace Test
             connection = new MySqlConnection(connectionString);
             Assert.IsNotNull(connection);
         }
-        
+
         public bool OpenConnection()
         {
-           
+
             try
             {
                 connection.Open();
-                
+
                 return true;
-            }catch(MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
-                switch(ex.Number)
+                switch (ex.Number)
                 {
                     case 0:
                         Console.WriteLine("Connexion impossible");
-                        
+
                         break;
                     case 1045:
                         Console.WriteLine("Mauvais identifiant");
-                        
+
                         break;
                 }
             }
-            
+
             return false;
         }
         public bool CloseConnection()
@@ -67,13 +66,13 @@ namespace Test
             try
             {
                 connection.Close();
-                
+
                 return true;
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
-               
+
                 return false;
             }
         }
@@ -148,7 +147,7 @@ namespace Test
                 return info;
             }
         }
-        public List<string>[] Select(string attributes, string table,string table2, string[] lignes,string premiereCondition, string condition)
+        public List<string>[] Select(string attributes, string table, string table2, string[] lignes, string premiereCondition, string condition)
         {
             string query = "SELECT " + attributes + " FROM " + table + " INNER JOIN " + table2 + " ON " + premiereCondition + " WHERE " + condition;
             List<string>[] info = new List<string>[lignes.Length];
@@ -185,19 +184,19 @@ namespace Test
         }
         public void update(string nomTable, string colonne, string value, string condition)
         {
-            string query = "UPDATE " + nomTable + " SET " + colonne + " = '"+value +"' WHERE " + condition;
-            if (this.OpenConnection()==true)
+            string query = "UPDATE " + nomTable + " SET " + colonne + " = '" + value + "' WHERE " + condition;
+            if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = query;
                 cmd.Connection = connection;
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
-                
+
             }
             else
             {
-                
+
             }
         }
         public void update(string nomTable, string colonne, int value, string condition)
@@ -210,7 +209,7 @@ namespace Test
                 cmd.Connection = connection;
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
-                
+
             }
             else
             {
@@ -220,19 +219,20 @@ namespace Test
         public void delete(string table, string condition)
         {
             string query = "DELETE FROM " + table + " WHERE " + condition;
-            if(this.OpenConnection()==true)
+            if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = query;
                 cmd.Connection = connection;
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
-            }else
+            }
+            else
             {
 
             }
         }
-        public void insert(string table,string[] nomLigne,string[] values)
+        public void insert(string table, string[] nomLigne, string[] values)
         {
             string query = "INSERT INTO " + table + "(" + string.Join(",", nomLigne) + ") VALUES ('" + string.Join("','", values) + "')";
 
@@ -244,6 +244,7 @@ namespace Test
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
+
         }
     }
 }

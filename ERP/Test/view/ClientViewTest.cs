@@ -48,10 +48,22 @@ namespace Test.view
             Assert.AreEqual("France", adresse[3]);
         }
         [Test]
-        public void InscrireClient( string nom, string prenom, int numero, string rue, string ville, string pays, int phone, string mail)
+        public void InscrireClient()
         {
             controler.InscrireClient("Ross", "hello", 14, "Rue jeannot","Rouen","USA",5466,"@lesboys") ;
-            Assert.AreEqual("@lesboys",controler.afficherMail(2));
+            Assert.AreEqual("@lesboys",controler.afficherMail(3));
+        }
+       [Test]
+        public void afficherClients()
+        {
+            List<string>[] result;
+            result = controler.afficherClients();
+            Assert.AreEqual("miko", result[0][1]);
+        }
+        [Test]
+        public void supprimerClient()
+        {
+            controler.supprimerClient(3);
         }
     }
 }

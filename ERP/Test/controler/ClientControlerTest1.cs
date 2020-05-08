@@ -47,5 +47,15 @@ namespace Test.controler
         {
             model.signIn(nom,prenom,numero,rue,ville,pays,phone,mail);
         }
+        public List<string>[] afficherClients()
+        {
+            List<string>[] result;
+            result = model.displayAllClients();
+            return result;
+        }
+        public void supprimerClient(int id_client)
+        {
+            model.deleteClient(id_client);
+        }
     }
 }

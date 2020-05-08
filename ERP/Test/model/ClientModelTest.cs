@@ -66,5 +66,17 @@ namespace Test.model
             string[] value = new string[] { nom, prenom, numero.ToString(),rue,ville,pays,phone.ToString(),mail,this.id_societe.ToString() };
             bdd.insert(table,nomLigne,value);
         }
+
+        public List<string>[] displayAllClients()
+        {
+            List<string>[] result;
+            string[] attributes = new string[] { "Cli_nom", "Cli_prenom" };
+            result = bdd.Select(string.Join(", ", attributes),"t_client",attributes," Soc_id="+this.id_societe);
+            return result;
+        }
+        public void deleteClient(int id_client)
+        {
+            bdd.delete("t_client", "Soc_id=" + this.id_societe + " AND Cli_id=" + id_client);
+        }
     }
 }
