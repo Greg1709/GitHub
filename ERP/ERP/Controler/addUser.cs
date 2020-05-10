@@ -41,15 +41,15 @@ namespace ERP.Controler
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if (Nom.Text != "")
-                if (Prenom.Text != "")
-                    if (Numero.Text != "")
-                        if (Rue.Text != "")
-                            if (Ville.Text != "")
-                                if (Pays.Text != "")
-                                    if (Phone.Text != "")
-                                        if (Mail.Text != "")
-                                            controler.InscrireClient(Nom.Text, Prenom.Text, Int32.Parse(Numero.Text), Rue.Text, Ville.Text, Pays.Text, Int32.Parse(Phone.Text), Mail.Text);
+            
+                                            
+            if(String.IsNullOrEmpty(Nom.Text) || String.IsNullOrEmpty(Prenom.Text) || String.IsNullOrEmpty(Numero.Text) || String.IsNullOrEmpty(Rue.Text) || String.IsNullOrEmpty(Ville.Text) || String.IsNullOrEmpty(Pays.Text) || String.IsNullOrEmpty(Phone.Text) || String.IsNullOrEmpty(Mail.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs");
+            }else
+            {
+                controler.InscrireClient(Nom.Text, Prenom.Text, Int32.Parse(Numero.Text), Rue.Text, Ville.Text, Pays.Text, Int32.Parse(Phone.Text), Mail.Text);
+            }
         }
     }
 }
