@@ -55,6 +55,11 @@ namespace ERP
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
             clientView = new ClientView(this.id_societe);
             clientView.Show();
             this.Hide();

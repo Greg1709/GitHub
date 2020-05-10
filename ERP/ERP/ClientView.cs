@@ -31,15 +31,41 @@ namespace ERP
             this.MaximumSize = new Size(640, 360);
             this.MaximizeBox = false;
             this.ControlBox = false;
-            List<string>[] resultats;
-            resultats = controler.afficherClients();
-            Console.WriteLine(resultats[1][0]);
-            for(int i=0; i<resultats.Length; i++)
-            {
-                clients.Items.Add(resultats[0][i] + resultats[1][i]);
-            }
+            affichage();
+            //Console.WriteLine(resultats[1][0]);
+            
             //MessageBox.Show(this.id_soc.ToString());
             
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            closure();
+        }
+        private void closure()
+        {
+            this.Close();
+        }
+        private void affichage()
+        {
+            List<string>[] resultats;
+            resultats = controler.afficherClients();
+            
+            MessageBox.Show(resultats.Count().ToString());
+            for (int i = 0; i < 3; i++)
+            {
+                clients.Items.Add(resultats[0][i] + " " + resultats[1][i]);
+            }
+        }
+        private void delete()
+        {
+            clients.Items.Clear();
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            delete();
+            affichage();
         }
     }
 }
