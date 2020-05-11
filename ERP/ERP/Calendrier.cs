@@ -62,7 +62,7 @@ namespace ERP
         {
             List<string>[] res;
             res = controler.afficherRDV();
-            for (int i = 0; i < res.Length; i++)
+            for (int i = 0; i < res[0].Count; i++)
             {
                 rdv.Items.Add(res[0][i] + " " + res[1][i]);
 

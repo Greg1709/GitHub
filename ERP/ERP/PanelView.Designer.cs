@@ -33,7 +33,6 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
             this.infoSoc = new MetroFramework.Controls.MetroButton();
             this.exit_btn = new MetroFramework.Controls.MetroButton();
             this.metroButton6 = new MetroFramework.Controls.MetroButton();
@@ -102,23 +101,6 @@
             this.metroButton4.UseCustomForeColor = true;
             this.metroButton4.UseSelectable = true;
             // 
-            // metroButton5
-            // 
-            this.metroButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.metroButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton5.BackgroundImage")));
-            this.metroButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.metroButton5.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.metroButton5.Location = new System.Drawing.Point(568, 404);
-            this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(262, 211);
-            this.metroButton5.TabIndex = 4;
-            this.metroButton5.Text = "Comptes";
-            this.metroButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroButton5.UseCustomForeColor = true;
-            this.metroButton5.UseSelectable = true;
-            this.metroButton5.UseStyleColors = true;
-            // 
             // infoSoc
             // 
             this.infoSoc.Location = new System.Drawing.Point(704, 81);
@@ -145,12 +127,16 @@
             // 
             this.metroButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
             this.metroButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButton6.BackgroundImage")));
-            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroButton6.Location = new System.Drawing.Point(23, 659);
+            this.metroButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.metroButton6.Location = new System.Drawing.Point(558, 404);
             this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(93, 82);
+            this.metroButton6.Size = new System.Drawing.Size(272, 221);
             this.metroButton6.TabIndex = 7;
+            this.metroButton6.Text = "Calendrier";
+            this.metroButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroButton6.UseCustomBackColor = true;
+            this.metroButton6.UseCustomForeColor = true;
             this.metroButton6.UseSelectable = true;
             this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
@@ -162,7 +148,6 @@
             this.Controls.Add(this.metroButton6);
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.infoSoc);
-            this.Controls.Add(this.metroButton5);
             this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
@@ -180,7 +165,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroButton metroButton5;
         private MetroFramework.Controls.MetroButton infoSoc;
         private MetroFramework.Controls.MetroButton exit_btn;
         private MetroFramework.Controls.MetroButton metroButton6;

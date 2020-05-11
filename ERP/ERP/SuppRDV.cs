@@ -53,7 +53,7 @@ namespace ERP
         {
             List<string>[] nom;
             nom = controler.trouverNom();
-            for(int i=0; i<2; i++)
+            for(int i=0; i<nom[0].Count; i++)
             {
                 listNom.Items.Add(nom[0][i]);
             }
