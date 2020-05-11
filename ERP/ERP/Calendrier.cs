@@ -18,6 +18,7 @@ namespace ERP
         private int id_soc, id_emp;
         private CalendrierControler controler;
         private newRDV view1;
+        private SuppRDV view2;
         public Calendrier(int id_soc, int id_emp)
         {
             InitializeComponent();
@@ -50,11 +51,18 @@ namespace ERP
             this.Hide();
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            view2 = new SuppRDV(this.id_soc, this.id_emp);
+            view2.Show();
+            this.Hide();
+        }
+
         private void affichage()
         {
             List<string>[] res;
             res = controler.afficherRDV();
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < res.Length; i++)
             {
                 rdv.Items.Add(res[0][i] + " " + res[1][i]);
 

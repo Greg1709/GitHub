@@ -32,6 +32,7 @@
             this.rdv = new System.Windows.Forms.ListBox();
             this.btn_exit = new MetroFramework.Controls.MetroButton();
             this.newRDV = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // rdv
@@ -56,7 +57,7 @@
             // 
             // newRDV
             // 
-            this.newRDV.Location = new System.Drawing.Point(43, 419);
+            this.newRDV.Location = new System.Drawing.Point(23, 401);
             this.newRDV.Name = "newRDV";
             this.newRDV.Size = new System.Drawing.Size(198, 54);
             this.newRDV.TabIndex = 2;
@@ -64,11 +65,22 @@
             this.newRDV.UseSelectable = true;
             this.newRDV.Click += new System.EventHandler(this.newRDV_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(248, 401);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(175, 53);
+            this.metroButton1.TabIndex = 3;
+            this.metroButton1.Text = "Supprimer RDV";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // Calendrier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 496);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.newRDV);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.rdv);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.ListBox rdv;
         private MetroFramework.Controls.MetroButton btn_exit;
         private MetroFramework.Controls.MetroButton newRDV;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

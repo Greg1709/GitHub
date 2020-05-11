@@ -30,10 +30,22 @@ namespace ERP.Model
             string[] value = new string[] { nom, date, duree.ToString(), this.id_soc.ToString(), this.id_emp.ToString() };
             bdd.insert(table, nomLigne, value);
         }
+        public List<string>[] findName(int id_soc,int id_emp)
+        {
+            string table = "t_calendrier";
+            string[] attributes = new string[] {"Cal_nom" };
+            List<string>[] res;
+            res = bdd.Select(string.Join(", ", attributes), table, attributes, " Soc_id =" + this.id_soc + " AND Emp_id=" + this.id_emp);
+            return res;
+        }
 
         public void deleteRDV(int Cal_id)
         {
             bdd.delete("t_calendrier", "Cal_id=" + Cal_id);
+        }
+        public void deleteRDV(string nom)
+        {
+            bdd.delete("t_calendrier","Cal_nom='"+nom+"'");
         }
     }
 }

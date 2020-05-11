@@ -32,5 +32,15 @@ namespace ERP.Controler
         {
             model.deleteRDV(id_cal);
         }
+        public void deleteRDV(string nom)
+        {
+            model.deleteRDV(nom);
+        }
+        public List<string>[]trouverNom()
+        {
+            List<string>[] res;
+            res = model.findName(this.id_soc, this.id_emp);
+            return res;
+        }
     }
 }
