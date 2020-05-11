@@ -129,7 +129,6 @@
     <Compile Include="Controler\ClientControler.cs" />
     <Compile Include="Controler\EmpControler.cs" />
     <Compile Include="Controler\SocieteController.cs" />
-    <Compile Include="CsvClient.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

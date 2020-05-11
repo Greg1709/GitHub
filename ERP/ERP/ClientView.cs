@@ -36,9 +36,7 @@ namespace ERP
             this.MaximizeBox = false;
             this.ControlBox = false;
             affichage();
-            //Console.WriteLine(resultats[1][0]);
-
-            //MessageBox.Show(this.id_soc.ToString());
+            
 
         }
 
@@ -75,18 +73,25 @@ namespace ERP
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            writeFile(controler.afficherClients());
-        }
-        static void writeFile(List<string>[] resultats)
-        {
-            /*var data = new[]
+            List<string>[] resultats;
+            resultats = controler.afficherClients();
+            for(int i=0; i<resultats.Length; i++)
             {
-                    for (int i = 0; i < resultats.Length; i++)
+                writeFile(resultats[0][i], resultats[1][i]);
+            }
+        }
+        public static void writeFile(string Nom, string Prenom)
+        {
+            try
+            {
+                using(System.IO.StreamWriter file = new System.IO.StreamWriter("client.csv",true))
                 {
-                //clients.Items.Add(resultats[0][i] + " " + resultats[1][i]);
-                new CsvClient { nom = resultats[0][i], prenom = resultats[1][i] };
+                    file.WriteLine(Nom + " , " + Prenom);
                 }
-            };*/
+            } catch(Exception ex)
+            {
+                throw new ApplicationException("Il y a une erreure :", ex);
+            }
         }
 
         private void addClient_Click(object sender, EventArgs e)
