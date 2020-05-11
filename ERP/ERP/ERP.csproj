@@ -42,8 +42,11 @@
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
-    <Reference Include="IronPdf">
-      <HintPath>C:\Users\grego\Desktop\IronPdf.dll</HintPath>
+    <Reference Include="IronPdf, Version=2020.3.2.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2020.3.2\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf.Assets.Rendering.Windows, Version=18.0.0.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iron.Assets.Rendering.Windows.18.0.1\lib\net40\IronPdf.Assets.Rendering.Windows.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
@@ -97,6 +100,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -114,6 +118,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier.Designer.cs">
+      <DependentUpon>Calendrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +136,7 @@
     <Compile Include="Controler\addUser.Designer.cs">
       <DependentUpon>addUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controler\CalendrierControler.cs" />
     <Compile Include="Controler\ClientControler.cs" />
     <Compile Include="Controler\EmpControler.cs" />
     <Compile Include="Controler\SocieteController.cs" />
@@ -141,6 +152,7 @@
     <Compile Include="LoginEmpView.Designer.cs">
       <DependentUpon>LoginEmpView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CalendrierModel.cs" />
     <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\dBConnect.cs" />
     <Compile Include="Model\EmpModel.cs" />
@@ -157,6 +169,12 @@
     <Compile Include="ModifySoc.Designer.cs">
       <DependentUpon>ModifySoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="newRDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newRDV.Designer.cs">
+      <DependentUpon>newRDV.cs</DependentUpon>
+    </Compile>
     <Compile Include="PanelView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +183,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Calendrier.resx">
+      <DependentUpon>Calendrier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientView.resx">
       <DependentUpon>ClientView.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifySoc.resx">
       <DependentUpon>ModifySoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newRDV.resx">
+      <DependentUpon>newRDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelView.resx">
       <DependentUpon>PanelView.cs</DependentUpon>

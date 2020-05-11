@@ -152,6 +152,7 @@
             this.metroButton6.TabIndex = 7;
             this.metroButton6.UseCustomBackColor = true;
             this.metroButton6.UseSelectable = true;
+            this.metroButton6.Click += new System.EventHandler(this.metroButton6_Click);
             // 
             // PanelView
             // 
