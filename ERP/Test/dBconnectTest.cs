@@ -182,6 +182,41 @@ namespace Test
                 return info;
             }
         }
+        public List<string>[] Select(string attributes, string table, string table2, string[] lignes, string premiereCondition)
+        {
+            string query = "SELECT " + attributes + " FROM " + table + " INNER JOIN " + table2 + " ON " + premiereCondition;
+            List<string>[] info = new List<string>[lignes.Length];
+            //info[0] = new List<string>();
+            for (int i = 0; i < lignes.Length; i++)
+            {
+                info[i] = new List<string>();
+            }
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    for (int i = 0; i < lignes.Length; i++)
+                    {
+                        info[i].Add(dataReader[lignes[i]] + "");
+                    }
+                    // info[0].Add(dataReader["Soc_id"] + "");
+                }
+
+                dataReader.Close();
+                this.CloseConnection();
+
+                return info;
+
+            }
+            else
+            {
+
+                return info;
+            }
+        }
         public void update(string nomTable, string colonne, string value, string condition)
         {
             string query = "UPDATE " + nomTable + " SET " + colonne + " = '" + value + "' WHERE " + condition;

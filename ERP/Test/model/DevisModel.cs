@@ -21,13 +21,14 @@ namespace Test.model
             bdd.insert(table, nomLigne, value);
         }
 
-        public List<string>[] getIdProduit(string nom)
+        public int getIdProduit(string nom)
         {
             List<string>[] result;
             string table = "t_stock";
             string[] attributes = new string[] {"sto_id" };
             result =bdd.Select(string.Join(", ",attributes), table, attributes, " Sto_nom='"+nom+"'");
-            return result;
+            int res = Int32.Parse(result[0][0]);
+            return res;
         }
         public void creerProduit(string nom, int prix)
         {
@@ -51,6 +52,31 @@ namespace Test.model
             string[] attributes = new string[] { "Sto_nom"};
             List<string>[] res;
             res = bdd.Select(string.Join(", ", attributes), table, attributes, " Soc_id=" + this.id_soc);
+            return res;
+        }
+        public int getIdDevis(string path)
+        {
+            string table = "t_devis";
+            string[] attributes = new string[] { "De_id" };
+            List<string>[] res;
+            res = bdd.Select(string.Join(", ", attributes), table, attributes, " De_path='" + path + "'");
+            int id = Int32.Parse(res[0][0]);
+            return id;
+        }
+        public void insertLigneDevis(int id_devis,int produit_id)
+        {
+            string table = "t_donner";
+            string[] nomLigne = new string[] {"De_id","Sto_id" };
+            string[] values = new string[] { id_devis.ToString(), produit_id.ToString() };
+            bdd.insert(table, nomLigne, values);
+        }
+        public List<string>[] afficherLignes(int id_devis)
+        {
+            List<string>[] res;
+            string table = "t_stock";
+            string table2 = "t_donner";
+            string[] attributes= new string[] {"Sto_nom","Sto_prix","De_id" };
+            res = bdd.Select(string.Join(", ", attributes), table, table2, attributes, "t_stock.sto_id = t_donner.sto_id", "t_donner.de_id="+id_devis);
             return res;
         }
     }

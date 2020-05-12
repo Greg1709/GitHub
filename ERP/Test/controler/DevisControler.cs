@@ -19,9 +19,9 @@ namespace Test.controler
         {
             model.createDevis(date, statut, path);
         }
-        public List<string>[] getIdProduit(string nom)
+        public int getIdProduit(string nom)
         {
-            List<string>[] res;
+            int res;
             res = model.getIdProduit(nom);
             return res;
         }
@@ -40,6 +40,20 @@ namespace Test.controler
         {
             List<string>[] res;
             res = model.afficherNomProduit();
+            return res;
+        }
+        public int getIdDevis(string path)
+        {
+            int result = model.getIdDevis(path);
+            return result;
+        }
+        public void insertLigneDevis(int id_devis, int produit_id)
+        {
+            model.insertLigneDevis(id_devis, produit_id);
+        }
+        public List<string>[] afficherLignes(int id_devis)
+        {
+            List<string>[] res = model.afficherLignes(id_devis);
             return res;
         }
     }
