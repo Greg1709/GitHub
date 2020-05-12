@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ERP.Controler;
 using MetroFramework;
 using MetroFramework.Forms;
 
@@ -14,16 +15,22 @@ namespace ERP
 {
     public partial class Devis : MetroFramework.Forms.MetroForm
     {
-        public Devis()
+        private int id_soc;
+        private DevisControler controler;
+        public Devis(int id_soc)
         {
             InitializeComponent();
+            this.id_soc = id_soc;
+            controler = new DevisControler(this.id_soc);
         }
 
         private void Devis_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.ControlBox = false;
-            this.MaximumSize = new Size(670, 530);
+            this.MaximumSize = new Size(670, 570);
+            affichageDevisAttente();
+            affichageDevisAccepter();
         }
 
         private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -39,5 +46,26 @@ namespace ERP
         {
             closure();
         }
+        private void affichageDevisAttente()
+        {
+            List<string>[] devis;
+            devis = controler.afficherDevis(0);
+            for(int i=0; i<devis[0].Count; i++)
+            {
+                
+                DevisAttente.Items.Add(devis[0][i]+" le "+devis[1][i]);
+            }
+        }
+        private void affichageDevisAccepter()
+        {
+            List<string>[] devis;
+            devis = controler.afficherDevis(1);
+            for (int i = 0; i < devis[0].Count; i++)
+            {
+
+                DevisAccept.Items.Add(devis[0][i] + " le " + devis[1][i]);
+            }
+        }
+
     }
 }

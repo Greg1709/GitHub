@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="Controler\CalendrierControler.cs" />
     <Compile Include="Controler\ClientControler.cs" />
+    <Compile Include="Controler\DevisControler.cs" />
     <Compile Include="Controler\EmpControler.cs" />
     <Compile Include="Controler\SocieteController.cs" />
     <Compile Include="Devis.cs">
@@ -161,6 +162,7 @@
     <Compile Include="Model\CalendrierModel.cs" />
     <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\dBConnect.cs" />
+    <Compile Include="Model\DevisModel.cs" />
     <Compile Include="Model\EmpModel.cs" />
     <Compile Include="Model\Societe.cs" />
     <Compile Include="modifyEmp.cs">

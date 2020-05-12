@@ -29,25 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Devis));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.DevisAttente = new System.Windows.Forms.ListBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.metroScrollBar1 = new MetroFramework.Controls.MetroScrollBar();
-            this.metroScrollBar2 = new MetroFramework.Controls.MetroScrollBar();
+            this.DevisAccept = new System.Windows.Forms.ListBox();
             this.btn_exit = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // listBox1
+            // DevisAttente
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(144, 110);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(496, 228);
-            this.listBox1.TabIndex = 0;
+            this.DevisAttente.FormattingEnabled = true;
+            this.DevisAttente.ItemHeight = 16;
+            this.DevisAttente.Location = new System.Drawing.Point(144, 110);
+            this.DevisAttente.Name = "DevisAttente";
+            this.DevisAttente.Size = new System.Drawing.Size(496, 228);
+            this.DevisAttente.TabIndex = 0;
             // 
             // metroLabel1
             // 
@@ -67,43 +65,14 @@
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Devis  accepté";
             // 
-            // listBox2
+            // DevisAccept
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(144, 379);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(496, 196);
-            this.listBox2.TabIndex = 3;
-            // 
-            // metroScrollBar1
-            // 
-            this.metroScrollBar1.LargeChange = 10;
-            this.metroScrollBar1.Location = new System.Drawing.Point(630, 128);
-            this.metroScrollBar1.Maximum = 100;
-            this.metroScrollBar1.Minimum = 0;
-            this.metroScrollBar1.MouseWheelBarPartitions = 10;
-            this.metroScrollBar1.Name = "metroScrollBar1";
-            this.metroScrollBar1.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
-            this.metroScrollBar1.ScrollbarSize = 10;
-            this.metroScrollBar1.Size = new System.Drawing.Size(10, 200);
-            this.metroScrollBar1.TabIndex = 4;
-            this.metroScrollBar1.UseSelectable = true;
-            this.metroScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroScrollBar1_Scroll);
-            // 
-            // metroScrollBar2
-            // 
-            this.metroScrollBar2.LargeChange = 10;
-            this.metroScrollBar2.Location = new System.Drawing.Point(630, 379);
-            this.metroScrollBar2.Maximum = 100;
-            this.metroScrollBar2.Minimum = 0;
-            this.metroScrollBar2.MouseWheelBarPartitions = 10;
-            this.metroScrollBar2.Name = "metroScrollBar2";
-            this.metroScrollBar2.Orientation = MetroFramework.Controls.MetroScrollOrientation.Vertical;
-            this.metroScrollBar2.ScrollbarSize = 10;
-            this.metroScrollBar2.Size = new System.Drawing.Size(10, 200);
-            this.metroScrollBar2.TabIndex = 5;
-            this.metroScrollBar2.UseSelectable = true;
+            this.DevisAccept.FormattingEnabled = true;
+            this.DevisAccept.ItemHeight = 16;
+            this.DevisAccept.Location = new System.Drawing.Point(144, 379);
+            this.DevisAccept.Name = "DevisAccept";
+            this.DevisAccept.Size = new System.Drawing.Size(496, 196);
+            this.DevisAccept.TabIndex = 3;
             // 
             // btn_exit
             // 
@@ -142,12 +111,10 @@
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btn_exit);
-            this.Controls.Add(this.metroScrollBar2);
-            this.Controls.Add(this.metroScrollBar1);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.DevisAccept);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.DevisAttente);
             this.Name = "Devis";
             this.Text = "Devis";
             this.Load += new System.EventHandler(this.Devis_Load);
@@ -158,12 +125,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox DevisAttente;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.ListBox listBox2;
-        private MetroFramework.Controls.MetroScrollBar metroScrollBar1;
-        private MetroFramework.Controls.MetroScrollBar metroScrollBar2;
+        private System.Windows.Forms.ListBox DevisAccept;
         private MetroFramework.Controls.MetroButton btn_exit;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;

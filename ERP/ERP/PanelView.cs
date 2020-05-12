@@ -22,6 +22,7 @@ namespace ERP
         private ModifySoc view3;
         private ClientView clientView;
         private Calendrier view4;
+        private Devis view5;
         public PanelView(int id_emp,int id_soc)
         {
             InitializeComponent();
@@ -56,7 +57,10 @@ namespace ERP
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            
+            //Bouton Devis
+            view5 = new Devis(this.id_societe);
+            view5.Show();
+            this.Hide();
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
