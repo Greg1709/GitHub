@@ -12,12 +12,12 @@ namespace Test.view
         [SetUp]
         public void setup()
         {
-            controler = new DevisControler(2, 1);
+            controler = new DevisControler(2);
         }
         [Test]
         public void insert()
         {
-            controler.creerDevis("2020-09-17 15:25:00",0,"DE001");
+            controler.creerDevis("2020-09-17 15:25:00",1,"DE004",1);
         }
         [Test]
         public void afficherIdProduit()
@@ -61,6 +61,20 @@ namespace Test.view
             result = controler.afficherLignes(controler.getIdDevis("DE001"));
             Assert.AreEqual("Macbook pro", result[0][0]);
             Assert.AreEqual(1500, Int32.Parse(result[1][0]));
+        }
+        [Test]
+        public void afficherDevisAccepter()
+        {
+            List<string>[] res;
+            res = controler.afficherDevisAccepter(1);
+            Assert.AreEqual("DE003", res[0][0]);
+        }
+        [Test]
+        public void afficherDevisAttente()
+        {
+            List<string>[] res;
+            res = controler.afficherDevisAccepter(0);
+            Assert.AreEqual("DE001", res[0][0]);
         }
     }
 }

@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Test.model
 {
     class DevisModel
     {
-        private int id_soc, cli_id;
+        private int id_soc;
         private dBconnectTest bdd = new dBconnectTest();
-        public DevisModel(int id_soc,int cli_id)
+        public DevisModel(int id_soc)
         {
             this.id_soc = id_soc;
-            this.cli_id = cli_id;
+           
         }
-        public void createDevis(string date, int statut, string path)
+        public void createDevis(string date, int statut, string path,int cli_id)
         {
             string table = "t_devis";
             string[] nomLigne = new string[] { "De_date", "De_statut","De_path","Soc_id","Cli_id" };
-            string[] value = new string[] { date, statut.ToString(),path,this.id_soc.ToString(),this.cli_id.ToString()};
+            string[] value = new string[] { date, statut.ToString(),path,this.id_soc.ToString(),cli_id.ToString()};
             bdd.insert(table, nomLigne, value);
         }
 
@@ -79,5 +80,27 @@ namespace Test.model
             res = bdd.Select(string.Join(", ", attributes), table, table2, attributes, "t_stock.sto_id = t_donner.sto_id", "t_donner.de_id="+id_devis);
             return res;
         }
+        public List<string>[] afficherDevisAccept(int value)
+        {
+            List<string>[] res;
+            string table = "t_devis";
+            string[] attributes;
+            
+            if (value == 0)
+            {
+                attributes = new string[] { "De_path", "De_date" };
+                res = bdd.Select(string.Join(", ", attributes), table, attributes, "De_statut=" + value + " AND Soc_id=" + this.id_soc);
+                return res;
+            }
+            else 
+            {
+                attributes = new string[] { "De_path", "De_date", "De_date_accept" };
+                res = bdd.Select(string.Join(", ", attributes), table, attributes, "De_statut=" + value + " AND Soc_id=" + this.id_soc);
+                return res;
+            }
+            
+        }
+
+        
     }
 }

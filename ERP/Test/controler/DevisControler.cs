@@ -7,17 +7,17 @@ namespace Test.controler
 {
     class DevisControler
     {
-        private int id_soc, cli_id;
+        private int id_soc;
         private DevisModel model;
-        public DevisControler(int id_soc,int cli_id)
+        public DevisControler(int id_soc)
         {
             this.id_soc = id_soc;
-            this.cli_id = cli_id;
-            model = new DevisModel(this.id_soc,this.cli_id);
+            
+            model = new DevisModel(this.id_soc);
         }
-        public void creerDevis(string date, int statut, string path)
+        public void creerDevis(string date, int statut, string path,int cli_id)
         {
-            model.createDevis(date, statut, path);
+            model.createDevis(date, statut, path,cli_id);
         }
         public int getIdProduit(string nom)
         {
@@ -55,6 +55,12 @@ namespace Test.controler
         {
             List<string>[] res = model.afficherLignes(id_devis);
             return res;
+        }
+        public List<string>[] afficherDevisAccepter(int value)
+        {
+            List<string>[] result;
+            result = model.afficherDevisAccept(value);
+            return result;
         }
     }
 }

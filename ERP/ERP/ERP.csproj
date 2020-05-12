@@ -140,6 +140,12 @@
     <Compile Include="Controler\ClientControler.cs" />
     <Compile Include="Controler\EmpControler.cs" />
     <Compile Include="Controler\SocieteController.cs" />
+    <Compile Include="Devis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devis.Designer.cs">
+      <DependentUpon>Devis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controler\addUser.resx">
       <DependentUpon>addUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devis.resx">
+      <DependentUpon>Devis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
