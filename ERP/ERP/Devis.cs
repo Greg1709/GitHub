@@ -17,6 +17,7 @@ namespace ERP
     {
         private int id_soc;
         private DevisControler controler;
+        private AddDevis view1;
         public Devis(int id_soc)
         {
             InitializeComponent();
@@ -67,5 +68,11 @@ namespace ERP
             }
         }
 
+        private void createDevis_Click(object sender, EventArgs e)
+        {
+            view1 = new AddDevis(this.id_soc);
+            view1.Show();
+            this.Close();
+        }
     }
 }

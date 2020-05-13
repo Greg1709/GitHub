@@ -70,7 +70,7 @@ namespace ERP.Model
         public List<string>[] displayAllClients()
         {
             List<string>[] result;
-            string[] attributes = new string[] { "Cli_nom", "Cli_prenom" };
+            string[] attributes = new string[] { "Cli_nom", "Cli_prenom","Cli_id" };
             result = bdd.Select(string.Join(", ", attributes), "t_client", attributes, " Soc_id=" + this.id_societe);
             return result;
         }

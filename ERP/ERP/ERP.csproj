@@ -118,6 +118,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDevis.Designer.cs">
+      <DependentUpon>AddDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calendrier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     <Compile Include="LoginEmpView.Designer.cs">
       <DependentUpon>LoginEmpView.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddLigneDevis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLigneDevis.Designer.cs">
+      <DependentUpon>AddLigneDevis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CalendrierModel.cs" />
     <Compile Include="Model\ClientModel.cs" />
     <Compile Include="Model\dBConnect.cs" />
@@ -197,6 +209,12 @@
     <Compile Include="SuppRDV.Designer.cs">
       <DependentUpon>SuppRDV.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDevis.resx">
+      <DependentUpon>AddDevis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLigneDevis.resx">
+      <DependentUpon>AddLigneDevis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calendrier.resx">
       <DependentUpon>Calendrier.cs</DependentUpon>
     </EmbeddedResource>
